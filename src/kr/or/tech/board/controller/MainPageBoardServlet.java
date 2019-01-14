@@ -50,7 +50,6 @@ public class MainPageBoardServlet extends HttpServlet {
 			System.out.println("회원 코드:"+member.getMemCode());
 			if(member.getMemCode().equals("ABC Manufacturer")) { //제조사일경우
 				sptList= new BoardService().mainRecentSupportM(member.getMemCode());
-				}
 			}else { 
 				sptList= new BoardService().mainRecentSupportP(member.getMemCode());
 			}
@@ -66,6 +65,10 @@ public class MainPageBoardServlet extends HttpServlet {
 				//데이터 정보가 아무것도 없을 경우
 				response.sendRedirect("/noticeList.do");
 			}
+
+		}else {
+			response.sendRedirect("views/error/errorPage.jsp");
+		}
 	}
 
 	/**

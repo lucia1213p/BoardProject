@@ -56,7 +56,7 @@ public class NoticeListServlet extends HttpServlet {
 				response.sendRedirect("views/board/noticeNotList.jsp");
 			}
 		}else {
-			response.sendRedirect("views/error/errorPage.jsp");
+			response.sendRedirect("views/error/authorityError.jsp");
 		}
 	}
 
